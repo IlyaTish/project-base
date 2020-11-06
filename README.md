@@ -2,8 +2,6 @@
 
 <strong>Project Base</strong> — базовый pug шаблон для молниеносной верстки ⚡⚡⚡
 
-### Ссылки на страницы
-
 Index page: https://ilyatish.github.io/project-base
 
 ### Запуск проекта (команды yarn/npm)
