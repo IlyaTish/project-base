@@ -1,14 +1,16 @@
 extends template.pug
 
 block content
-  //- Include Header block ('.header')
-  include assets/blocks/common-blocks/header/block.pug
+  //- Header block ('.header')
+  include assets/blocks/header/block.pug
 
-  .content
-    include assets/blocks/main/main-slider/block.pug
-    include assets/blocks/main/menu-desc/block.pug
-    include assets/blocks/main/map/block.pug
-    include assets/blocks/common-blocks/products/block.pug
 
-  //- Include Footer block ('.footer')
-  include assets/blocks/common-blocks/footer/block.pug
+  - const page = 'index'
+
+  main(class='content '+ page +'')
+    //- Main block ('.main')
+    include assets/blocks/main/block.pug
+
+
+  //- Popup block ('.footer')
+  include assets/blocks/footer/block.pug
