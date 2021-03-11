@@ -2,15 +2,15 @@ extends template.pug
 
 block content
   //- Header block ('.header')
-  include assets/blocks/header/block.pug
+  include /header/block.pug
 
 
   - const page = 'index'
 
   main(class='content '+ page +'')
     //- Main block ('.main')
-    include assets/blocks/main/block.pug
+    include /main/block.pug
 
 
   //- Popup block ('.footer')
-  include assets/blocks/footer/block.pug
+  include /footer/block.pug
