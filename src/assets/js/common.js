@@ -1,4 +1,4 @@
-//= require ../blocks/common/script.js
+//= require common/script.js
 
 
 /* Execution of functions */
@@ -6,8 +6,8 @@
 ready(() => {
   /* Exports */
 
-  //= require ../blocks/common/script.js
-  //= require ../blocks/header/script.js
+  //= require common/script.js
+  //= require header/script.js
 
   window.onresize = () => {
     headerScript.headerTeleport();
