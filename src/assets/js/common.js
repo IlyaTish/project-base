@@ -1,10 +1,10 @@
 //= require common/script.js
 
 
-/* Execution of functions */
+// -------- Execution of functions --------
 
 ready(() => {
-  /* Exports */
+  // -------- Exports --------
 
   //= require header/script.js
 

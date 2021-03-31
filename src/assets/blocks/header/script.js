@@ -1,5 +1,5 @@
 const headerScript = (() => {
-  /* Variables */
+  // -------- Variables --------
 
   const burgerBtn     = document.querySelector('.burger-btn'),
         burgerMenu    = document.querySelector('.burger-menu'),
@@ -17,25 +17,29 @@ const headerScript = (() => {
 
 
 
-  /* Functions */
+  // -------- Functions --------
 
-  // Teleport onResize function
+  /* Teleport onResize function */
+
   const headerTeleport = () => {
-    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const viewportWidth =
+      window.innerWidth
+      || document.documentElement.clientWidth;
 
     if ((viewportWidth < 991) && (flag === 1)) {
       flag = 0;
-      appendElem(headerNavList, burgerMenu);
+      appendElem(headerNavList, burgerMenu)
     }
 
     if ((viewportWidth > 991) && (flag === 0)) {
       flag = 1;
-      appendElem(headerNavList, headerNav);
+      appendElem(headerNavList, headerNav)
     }
   }
 
 
-  // Burger menu
+  /* Burger menu */
+
   const initBurgerMenu = () => {
     burgerBtn.addEventListener('click', e => {
       burgerBtn.classList.toggle('active');
@@ -53,18 +57,18 @@ const headerScript = (() => {
       } else {
         // hide
         burgerMenu.classList.add('transition');
-        burgerMenu.classList.add('hidden');
+        burgerMenu.classList.add('hidden')
       }
     });
 
-    burgerMenu.addEventListener('transitionend', () => {
-      burgerMenu.classList.remove('transition');
-    })
+    burgerMenu.addEventListener('transitionend', () =>
+      burgerMenu.classList.remove('transition')
+    )
   }
 
 
 
-  /* Execution of functions */
+  // -------- Execution of functions --------
 
   viewportWidth < 991 ?
     appendElem(headerNavList, burgerMenu) :
