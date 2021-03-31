@@ -1,16 +1,16 @@
-extends template.pug
+extends template
 
 block content
   //- Header block ('.header')
-  include /header/block.pug
+  include /header/block
 
 
   - const page = 'index'
 
   main(class='content '+ page +'')
     //- Main block ('.main')
-    include /main/block.pug
+    include /main/block
 
 
   //- Popup block ('.footer')
-  include /footer/block.pug
+  include /footer/block

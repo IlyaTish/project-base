@@ -6,10 +6,8 @@
 ready(() => {
   /* Exports */
 
-  //= require common/script.js
   //= require header/script.js
 
-  window.onresize = () => {
-    headerScript.headerTeleport();
-  }
+  window.onresize = () =>
+    headerScript.headerTeleport()
 })

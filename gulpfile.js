@@ -4,6 +4,7 @@ const gulp         = require('gulp'),
       include      = require('gulp-include'),
       pug          = require('gulp-pug'),
       sass         = require('gulp-sass'),
+      pxtorem      = require('gulp-pxtorem'),
       cleanCSS     = require('gulp-clean-css'),
       autoprefixer = require('gulp-autoprefixer'),
       sourcemaps   = require('gulp-sourcemaps'),
@@ -106,6 +107,9 @@ gulp.task('styles', () => {
       .on('error', sass.logError)
       .pipe(autoprefixer())
       .pipe(concat('style.min.css'))
+      .pipe(pxtorem({
+        propList: ['*']
+      }))
       .pipe(cleanCSS())
       .pipe(gulp.dest(PATHS.styles.dest))
       .pipe(browserSync.stream())

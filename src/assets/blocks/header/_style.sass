@@ -4,13 +4,13 @@
 
   &__cont
     height: 100%
-    padding: 0.875rem 1rem
+    padding: 14px 16px
     display: flex
     align-items: center
     box-sizing: border-box
 
 .header-nav
-  margin: 0 0 0 1.25rem
+  margin: 0 0 0 20px
   position: relative
   z-index: 6
 
@@ -20,7 +20,7 @@
     display: flex
     flex-wrap: wrap
     align-items: center
-    grid-gap: 1rem
+    grid-gap: 16px
 
   &__item
     list-style: none
@@ -31,14 +31,14 @@
   &__link
     display: inline-block
     color: #000000
-    font-size: 1rem
+    font-size: 16px
     text-decoration: none
     transition: .2s
 
 .burger-btn
-  width: 1.75rem
-  height: 1.75rem
-  margin: 0 1rem 0 0
+  width: 28px
+  height: 28px
+  margin: 0 16px 0 0
   display: none
   flex-direction: column
   justify-content: space-between
@@ -47,8 +47,8 @@
   z-index: 999999
 
   &:before, &:after, &__elem
-    width: 1.5rem
-    min-height: 0.25rem
+    width: 24px
+    min-height: 4px
     margin: 0 auto
     content: ''
     display: block
@@ -57,10 +57,10 @@
     transition: .2s
 
   &:before
-    top: 0.25rem
+    top: 4px
 
   &:after
-    bottom: 0.25rem
+    bottom: 4px
 
 .burger-btn.active
   .burger-btn__elem
@@ -68,12 +68,12 @@
     background: $main
 
   &:before
-    top: 0.75rem
+    top: 12px
     transform: rotate(-135deg)
     background: $main
 
   &:after
-    bottom: 0.75rem
+    bottom: 12px
     transform: rotate(135deg)
     background: $main
 
@@ -104,10 +104,10 @@
 
     &__link
       width: 100%
-      padding: 0.625rem 0.75rem
+      padding: 10px 12px
       display: block
       color: $black
-      font-size: 0.875rem
+      font-size: 14px
       border-top: 1px solid $gray
       box-sizing: border-box
 
