@@ -1,40 +1,40 @@
 # Project Base
 
-<strong>Project Base</strong> — базовый pug шаблон для молниеносной верстки ⚡⚡⚡
+<strong>Project Base</strong> — basic pug template for lightning-fast layout ⚡⚡⚡
 
-### Запуск проекта (команды yarn/npm)
+### Running the project (yarn/npm commands)
 
 1. `yarn install`
 2. `gulp`
 
-### Структура проекта
+### Project structure
 
-`src/assets` - все ассеты проекта (стили, скрипты, картинки, шрифты и т.д.). Копируются в папку `dist/assets`, с предварительным парсингом шаблонов pug, c минификацией и компилированием стилей, а также c транспайлером (babel), минификацией скриптов и cжатием картинок.<br><br>
-Здесь находятся:
-- папка `sass` с главным `style.sass` - файлом проекта с @import-ами стилей всех нужных блоков и шрифтов
-- папка `js` с главными `*.js` - файлами проекта с require-ми скриптов всех нужных блоков (используется синтаксис плагина [gulp-include](https://www.npmjs.com/package/gulp-include#include-directives))
-- папка `blocks` - блоки шаблонов pug, которые подключаются include-ом к шаблонам и страницам
+`src/assets` - all project assets (styles, scripts, pictures, fonts, etc.). They are copied to the `dist/assets` folder, with preliminary parsing of pug templates, with minification and compilation of styles, as well as with a transpiler (babel), minification of scripts and image compression.<br><br>
+Here are:
+- `sass` folder with main `style.sass` - project file with @import styles of all necessary blocks and fonts
+- the `js` folder with the main `*.js` - project files with require scripts of all the necessary blocks (using the plugin syntax [gulp-include](https://www.npmjs.com/package/gulp-include#include-directives))
+- folder `blocks` - blocks of pug templates, which are connected by include to templates and pages
 
-Для групировки блоков для других страниц рекомендуется использовать префикс `@` с именем страницы, например, если в проекте есть страница `about`, блоки можно сложить в папку `@about`.
+To group blocks for other pages, it is recommended to use the `@` prefix with the page name, for example, if the project has a `about` page, the blocks can be put into the `@about` folder.
 
-## Логика сборки
-### PUG
-1. Сборщик пропускает pug-файлы в папке `src` через шаблонизатор Pug.
-2. Когда встречается упоминание `extends`, включается обработка шаблона c файла `template.pug`.
-3. В шаблоне при нахождении `include` парсится шаблон блока из указанной папки.
-4. В папку `dist` копируются скомпилированные html-файлы из папки `src`.
+## Assembly logic
+###PUG
+1. The builder passes the pug files in the `src` folder through the Pug template engine.
+2. When `extends` is mentioned, processing of the template from `template.pug` is enabled.
+3. In the template, when `include` is found, the block template from the specified folder is parsed.
+4. The compiled html files from the `src` folder are copied to the `dist` folder.
 
-### Стили
-1. Сборщик пропускает sass-файлы из папок `src/assets` через шаблонизатор SASS.
-1. Файлы с подчёркиванием '_', указанные с помощью `@import`, инклюдятся и компилируются. Файлы без подчёркивания компилируются автоматически в алфавитном порядке.
-1. В `dist/assets/css` копируются скомпилированные css-файлы.
+### Styles
+1. The builder passes sass files from the `src/assets` folders through the SASS templating engine.
+1. Files with an underscore '_' specified with `@import` are included and compiled. Files without underscores are compiled automatically in alphabetical order.
+1. Copy compiled css files to `dist/assets/css`.
 
-### Изображения
-* В папку `dist/assets/img/*` копируются файлы из папок `src/assets/blocks/*/img`, `src/assets/img` (изображения блока копируются в папку блока).
+### Images
+* Files from `src/assets/blocks/*/img`, `src/assets/img` folders are copied to the `dist/assets/img/*` folder (block images are copied to the block folder).
 
-### Скрипты
-1. Сборщик пропускает js-файлы из папки `src/assets/js` через плагин `gulp-include`.
-2. Babel - переписывает код современного стандарта Javascript (ES2015) на более поздний.
-3. Из папок `src/assets/js` и `src/assets/libs/*.js` скрипты проходят через плагин `gulp-uglify`, который минифицирует скрипты.
-4. Затем при помощи плагина `gulp-concat`, скрипты объединяются в один общий файл `all.min.js`.
-5. В `dist/assets/js` копируется скомпилированный js-файл `all.min.js`.
+### Scripts
+1. The builder passes js files from the `src/assets/js` folder through the `gulp-include` plugin.
+2. Babel - rewrites the code of the modern standard Javascript (ES2015) to a later one.
+3. From the `src/assets/js` and `src/assets/libs/*.js` folders, the scripts pass through the `gulp-uglify` plugin, which minifies the scripts.
+4. Then, using the `gulp-concat` plugin, the scripts are combined into one common file `all.min.js`.
+5. The compiled js file `all.min.js` is copied to `dist/assets/js`.
