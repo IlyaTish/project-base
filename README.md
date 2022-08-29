@@ -18,7 +18,7 @@ Here are:
 To group blocks for other pages, it is recommended to use the `@` prefix with the page name, for example, if the project has a `about` page, the blocks can be put into the `@about` folder.
 
 ## Assembly logic
-###PUG
+### PUG
 1. The builder passes the pug files in the `src` folder through the Pug template engine.
 2. When `extends` is mentioned, processing of the template from `template.pug` is enabled.
 3. In the template, when `include` is found, the block template from the specified folder is parsed.
